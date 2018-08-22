@@ -26,7 +26,7 @@
 
 6. Build the PDF  
  **make clean**  
- **make**..
+ **make**  
  This will create the **build** folder and after the program finished, please check the **build/tutorial.log** file for more advanced errors.
 
 7. Fix the last errors and after no errors occure (*Latexmk: All targets (../build/tutorial.pdf) are up-to-date* in log.txt), distribute the PDF
