@@ -49,11 +49,12 @@
 
 
 1. Download and install pandoc:  
- **https://pandoc.org/**
+ **https://pandoc.org/**  
+or via conda
 
 2. Download and install TeX:  
  Linux: **https://www.tug.org/texlive/**  
- Mac: **https://www.tug.org/mactex/**
+ Mac: **https://www.tug.org/mactex/**  
 
 3. Run a python 2.7 environment while compiling the tutorial
 
