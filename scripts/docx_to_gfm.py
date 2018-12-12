@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 import os
+import subprocess as sh
 import re
 import argparse
 
@@ -68,7 +69,7 @@ def main():
         args.output,
         args.input
         )
-    os.system(command)
+    sh.call(command.split())
 
     ### FIX URL TAGS
 

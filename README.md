@@ -1,5 +1,19 @@
 # Tutorial
 
+## Installation
+
+
+1. Download and install pandoc:  
+ **https://pandoc.org/**  
+or via conda
+
+2. Download and install TeX:  
+ Linux: **https://www.tug.org/texlive/**  
+ Mac: **https://www.tug.org/mactex/**  
+
+3. Run a python 2.7 environment while compiling the tutorial
+
+
 
 ## How to create the SPHIRE tutorial
 
@@ -26,10 +40,15 @@
 
 6. Build the PDF  
  **make clean**  
- **make**..
+ **make**  
  This will create the **build** folder and after the program finished, please check the **build/tutorial.log** file for more advanced errors.
 
 7. Fix the last errors and after no errors occure (*Latexmk: All targets (../build/tutorial.pdf) are up-to-date* in log.txt), distribute the PDF
+
+
+## Upload changes
+
+Please open a pull request with the changes as nicely described here: [https://yangsu.github.io/pull-request-tutorial/](https://yangsu.github.io/pull-request-tutorial/)
 
 
 ## How to create this tutorial
@@ -43,19 +62,6 @@
 
 2. Build the pdf  
  **make readme**
-
-
-## Installation
-
-
-1. Download and install pandoc:  
- **https://pandoc.org/**
-
-2. Download and install TeX:  
- Linux: **https://www.tug.org/texlive/**  
- Mac: **https://www.tug.org/mactex/**
-
-3. Run a python 2.7 environment while compiling the tutorial
 
 
 ## How to edit the tutorial
