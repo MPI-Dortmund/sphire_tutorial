@@ -147,11 +147,12 @@ def replaces(lines):
     lines = lines.replace(r'\$\sigma\$', r'$\sigma$')
     lines = lines.replace(r'\[', r'[')
     lines = lines.replace(r'\-', r'-')
-    lines = lines.replace(r'\>', r'>')
-    lines = lines.replace(r'>>>', r'\textgreater\hbox{}\textgreater\hbox{}\textgreater')
+    lines = lines.replace(r'\>\>\>', r'\textgreater\hbox{}\textgreater\hbox{}\textgreater')
     lines = lines.replace(r'\<\<\<', r'\textless\hbox{}\textless\hbox{}\textless')
-    lines = lines.replace(r'=>', r'=\textgreater')
-    lines = lines.replace(r'<=', r'\textless=')
+    lines = lines.replace(r'=\>', r'=\textgreater')
+    lines = lines.replace(r'\<=', r'\textless=')
+    lines = lines.replace(r'\>', r'>')
+    lines = lines.replace(r'\<', r'<')
     lines = lines.replace(r'\]', r']')
     lines = lines.replace(r'\]', r']')
     lines = lines.replace(r'&', r'\&')
@@ -205,6 +206,17 @@ def regex_bolt(lines):
         new_lines.append(line)
     return '\n'.join(new_lines)
 
+
+def regex_unit(lines):
+    new_lines = []
+    si_re = re.compile(r"\\si{([^}]*)}")
+    for line in lines.split('\n'):
+        match = si_re.findall(line)
+        for phrase in match:
+            phrase_split = phrase.split(' ')
+            line = line.replace(phrase, '\\{0}'.format('\\'.join(phrase_split)))
+        new_lines.append(line)
+    return '\n'.join(new_lines)
 
 def regex_si(lines):
     new_lines = []
@@ -323,6 +335,7 @@ def main():
     lines = regex_bolt(lines)
     lines = regex_italic(lines)
     lines = regex_si(lines)
+    lines = regex_unit(lines)
     lines = regex_acro(lines, args.acronyms_file)
     lines = regex_numrange(lines)
     lines = regex_media(lines)
